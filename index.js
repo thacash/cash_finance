@@ -1,37 +1,37 @@
-module.exports = getContractPrice = (contractPrice) => {
+module.exports = function getContractPrice(contractPrice) {
   return parseFloat(contractPrice) * 100;
 };
 
-module.exports = getContractIncomePercent = (contractPrice, stockPrice) => {
+module.exports = function getContractIncomePercent(contractPrice, stockPrice) {
   return ((parseFloat(contractPrice) / parseFloat(stockPrice)) * 100).toFixed(
     2
   );
 };
 
-module.exports = getStockPrice = (stockPrice) => {
+module.exports = function getStockPrice(stockPrice) {
   return parseFloat(stockPrice * 100).toFixed(2);
 };
 
-module.exports = getContractDays = (contractExpire, contractStart) => {
+module.exports = function getContractDays(contractExpire, contractStart) {
   return Math.ceil(
     (new Date(contractExpire).getTime() - new Date(contractStart).getTime()) /
       (1000 * 3600 * 24)
   );
 };
 
-module.exports = getContractDaysLeft = (contractExpire) => {
+module.exports = function getContractDaysLeft(contractExpire) {
   return Math.ceil(
     (new Date(contractExpire).getTime() - new Date().getTime()) /
       (1000 * 3600 * 24)
   );
 };
 
-module.exports = getAnnualizedReturn = (
+module.exports = function getAnnualizedReturn(
   contractExpire,
   contractPrice,
   contractStart,
   stockPrice
-) => {
+) {
   return (
     parseFloat((contractPrice / parseFloat(stockPrice)) * 100) *
     (365 /
@@ -43,7 +43,7 @@ module.exports = getAnnualizedReturn = (
   ).toFixed(2);
 };
 
-module.exports = getStockIncreasePercent = (stockPrice, strikePrice) => {
+module.exports = function getStockIncreasePercent(stockPrice, strikePrice) {
   return (
     100 *
     ((parseFloat(strikePrice) - parseFloat(stockPrice)) /
@@ -51,11 +51,11 @@ module.exports = getStockIncreasePercent = (stockPrice, strikePrice) => {
   ).toFixed(2);
 };
 
-module.exports = getSellerGenerates = (
+module.exports = function getSellerGenerates(
   contractPrice,
   stockPrice,
   strikePrice
-) => {
+) {
   return (
     100 *
       ((parseFloat(strikePrice) - parseFloat(stockPrice)) /
@@ -64,21 +64,21 @@ module.exports = getSellerGenerates = (
   ).toFixed(2);
 };
 
-module.exports = getOriginalStockValue = (stockPrice) => {
+module.exports = function getOriginalStockValue(stockPrice) {
   return (parseFloat(stockPrice) * 100).toFixed(2);
 };
 
-module.exports = getNewStockValueITM = (contractPrice, strikePrice) => {
+module.exports = function getNewStockValueITM(contractPrice, strikePrice) {
   return ((parseFloat(strikePrice) + parseFloat(contractPrice)) * 100).toFixed(
     2
   );
 };
 
-module.exports = getSellerNetGainITM = (
+module.exports = function getSellerNetGainITM(
   contractPrice,
   stockPrice,
   strikePrice
-) => {
+) {
   return (
     ((parseFloat(strikePrice) + parseFloat(contractPrice)) * 100).toFixed(2) -
     (parseFloat(stockPrice) * 100).toFixed(2)
