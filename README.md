@@ -20,3 +20,25 @@ cashfinance.getContractIncomePercent(contractPrice, stockPrice);
 //=> 28.79
 
 ```
+
+## Methods
+
+```js
+const cashfinance = require("@thacash/cash_finance");
+
+console.log(cashfinance);
+
+//=> {
+//=>   getContractPrice: [Function: getContractPrice],
+//=>   getContractIncomePercent: [Function: getContractIncomePercent],
+//=>   getStockPrice: [Function: getStockPrice],
+//=>   getContractDays: [Function: getContractDays],
+//=>   getContractDaysLeft: [Function: getContractDaysLeft],
+//=>   getAnnualizedReturn: [Function: getAnnualizedReturn],
+//=>   getStockIncreasePercent: [Function: getStockIncreasePercent],
+//=>   getSellerGenerates: [Function: getSellerGenerates],
+//=>   getOriginalStockValue: [Function: getOriginalStockValue],
+//=>   getNewStockValueITM: [Function: getNewStockValueITM],
+//=>   getSellerNetGainITM: [Function: getSellerNetGainITM]
+//=> }
+```
