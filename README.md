@@ -23,6 +23,8 @@ cashfinance.getContractIncomePercent(contractPrice, stockPrice);
 
 ## Methods
 
+See the available methods by logging the package. 
+
 ```js
 const cashfinance = require("@thacash/cash_finance");
 
